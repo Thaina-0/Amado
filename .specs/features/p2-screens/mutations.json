@@ -1,0 +1,65 @@
+[
+  {
+    "file": "src/features/urgencias/providers.ts",
+    "old": "    PROVIDER_CATEGORIES.indexOf(a.category) - PROVIDER_CATEGORIES.indexOf(b.category) ||\n    compareIds(a.id, b.id)",
+    "new": "    compareIds(a.id, b.id)",
+    "proof": "pnpm exec vitest run src/features/urgencias/providers.test.ts -t \"orders by distance then category then id\"",
+    "label": "provider tie-break drops the category (id only)"
+  },
+  {
+    "file": "src/features/urgencias/providers.ts",
+    "old": ".sort((a, b) => a.meters - b.meters || compareCategoryThenId(a.provider, b.provider))",
+    "new": ".sort((a, b) => Math.round(a.meters / 100) - Math.round(b.meters / 100) || compareCategoryThenId(a.provider, b.provider))",
+    "proof": "pnpm exec vitest run src/features/urgencias/providers.test.ts -t \"orders by distance then category then id\"",
+    "label": "distance compared in 100 m buckets instead of exactly"
+  },
+  {
+    "file": "src/features/urgencias/EverydayScreen.tsx",
+    "old": "if (initialProviders.length === 0) return",
+    "new": "if (initialProviders.length < 0) return",
+    "proof": "pnpm exec vitest run src/features/urgencias/EverydayScreen.test.tsx -t \"asks the position only with a provider\"",
+    "label": "Urgencias asks the position with an empty list"
+  },
+  {
+    "file": "src/features/emergency/EmergencyScreen.tsx",
+    "old": "if (initialPlaces.length === 0) return",
+    "new": "if (initialPlaces.length < 0) return",
+    "proof": "pnpm exec vitest run src/features/emergency/EmergencyScreen.test.tsx -t \"does not ask the position while the places list is empty\"",
+    "label": "Emergencia asks the position with an empty list"
+  },
+  {
+    "file": "src/features/places/HomeScreen.tsx",
+    "old": "const showCircuits = category === 'all' && query.trim() === ''",
+    "new": "const showCircuits = query.trim() === ''",
+    "proof": "pnpm exec vitest run src/features/places/HomeScreen.test.tsx -t \"hides the circuit card while filtering\"",
+    "label": "circuit card stays under a category chip"
+  },
+  {
+    "file": "src/app/routes.ts",
+    "old": "  'emergency',\n  'everyday',\n])",
+    "new": "  'emergency',\n])",
+    "proof": "pnpm exec vitest run src/app/routes.test.ts -t \"while onboarding is pending the new routes\"",
+    "label": "Urgencias no longer open while onboarding is pending"
+  },
+  {
+    "file": "src/app/routes.ts",
+    "old": "    const id = decode(path.slice('circuito/'.length))\n    return id && !id.includes('/') ?",
+    "new": "    const id = decode(path.slice('circuito/'.length))\n    return id ?",
+    "proof": "pnpm exec vitest run src/app/routes.test.ts -t \"falls back for an unknown category or circuit\"",
+    "label": "circuit id may contain a slash"
+  },
+  {
+    "file": "src/features/emergency/places.ts",
+    "old": "Math.abs(value) <= limit",
+    "new": "Math.abs(value) < limit",
+    "proof": "pnpm exec vitest run src/features/urgencias/providers.test.ts -t \"validateProvider\"",
+    "label": "coordinate bound 90/180 made exclusive"
+  },
+  {
+    "file": "src/features/urgencias/EverydayScreen.tsx",
+    "old": "provider.open24h ? t('everyday.open24h') : undefined",
+    "new": "t('everyday.open24h')",
+    "proof": "pnpm exec vitest run src/features/urgencias/EverydayScreen.test.tsx -t \"a provider row shows its details and links\"",
+    "label": "Aberto 24 h shown for every provider"
+  }
+]

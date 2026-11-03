@@ -1,0 +1,29 @@
+# dependencies and build output
+node_modules
+dist
+dev-dist
+coverage
+*.tsbuildinfo
+
+# environment and secrets
+.env
+.env.*
+!.env.example
+
+# OS and editor
+.DS_Store
+
+# Claude Code local state
+CLAUDE.local.md
+.claude/settings.local.json
+
+# harness runtime state
+.tlc/harness/state/
+
+.cursor/hooks.json
+
+# browser tool output
+.playwright-mcp/
+
+# python bytecode from the vendored skill scripts
+__pycache__/

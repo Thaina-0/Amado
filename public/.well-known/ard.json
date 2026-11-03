@@ -1,0 +1,17 @@
+{
+  "entries": [
+    {
+      "identifier": "urn:air:amadoios.pages.dev:site:amado",
+      "displayName": "Amado: guia de turismo de Ilhéus",
+      "description": "Resumo, em Markdown, do app Amado e das suas telas e circuitos: lugares, eventos, emergência e roteiros para quem visita Ilhéus, na Bahia.",
+      "type": "text/markdown",
+      "url": "https://amadoios.pages.dev/llms.txt",
+      "representativeQueries": [
+        "o que fazer em Ilhéus em um dia",
+        "circuitos turísticos em Ilhéus",
+        "o que é o Circuito Jorge Amado em Ilhéus",
+        "números de emergência para turistas em Ilhéus"
+      ]
+    }
+  ]
+}

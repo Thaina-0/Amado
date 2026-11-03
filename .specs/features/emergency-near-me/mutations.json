@@ -1,0 +1,26 @@
+[
+  {
+    "file": "src/features/emergency/places.ts",
+    "old": "`${Math.round(meters / 10) * 10} m`",
+    "new": "`${Math.floor(meters / 10) * 10} m`",
+    "proof": "pnpm exec vitest run src/features/emergency/places.test.ts -t \"formats the distance\"",
+    "label": "metres rounded to 10 becomes floor to 10 (AC 7)",
+    "result": "killed after the fix (re-run in the scratchpad copy; check_proofs --mutations needs git)"
+  },
+  {
+    "file": "src/features/emergency/places.ts",
+    "old": "Math.abs(value) <= limit",
+    "new": "Math.abs(value) < limit",
+    "proof": "pnpm exec vitest run src/features/emergency/places.test.ts -t \"validatePlace\"",
+    "label": "coordinate bound shifted: exactly 90 / 180 now rejected (AC 14)",
+    "result": "killed after the fix (re-run in the scratchpad copy; check_proofs --mutations needs git)"
+  },
+  {
+    "file": "src/features/emergency/EmergencyScreen.tsx",
+    "old": "meters === undefined ? undefined : formatDistance(meters)",
+    "new": "!meters ? undefined : formatDistance(meters)",
+    "proof": "pnpm exec vitest run src/features/emergency/EmergencyScreen.test.tsx -t \"shows the place row\"",
+    "label": "a place at 0 m loses its distance (AC 7, 0 m)",
+    "result": "killed after the fix (re-run in the scratchpad copy; check_proofs --mutations needs git)"
+  }
+]

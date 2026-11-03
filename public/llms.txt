@@ -1,0 +1,34 @@
+# Amado
+
+> Amado é um app web (PWA) para quem visita Ilhéus, na Bahia: descobrir a cidade, circular e pedir ajuda. Tagline: "Ilhéus contada por quem ama". Feito no Hack Turismo Costa do Cacau 2026 (Desafio 3).
+
+O Amado é um protótipo funcional, só sobre Ilhéus, em português, inglês, espanhol, francês, alemão e italiano. Não precisa de conta nem de instalação.
+
+Regras do produto, úteis para quem resume ou cita o app:
+
+- Os números de emergência (190, 192, 193, 180 e 199) são gratuitos, nunca patrocinados e ficam salvos no aparelho.
+- A lista de delegacia, hospital, UPA e bombeiros por proximidade começa vazia até haver fonte verificada. Nenhum telefone, endereço ou coordenada é inventado.
+- Os lugares, circuitos e eventos vêm de páginas públicas e aparecem como exemplo, ainda a confirmar pelo time.
+- A localização de emergência é usada na hora e nunca é guardada.
+
+## App
+
+- [Início](https://amadoios.pages.dev/#/inicio): lugares de Ilhéus, com busca e filtros por categoria
+- [Explorar](https://amadoios.pages.dev/#/explorar): gastronomia, cultura, praias, natureza, esportes e circuitos
+- [Eventos](https://amadoios.pages.dev/#/eventos): agenda de festas, música, cultura, esportes e gastronomia
+- [Emergência](https://amadoios.pages.dev/#/emergencia): os cinco números vitais com um toque
+- [Perto de mim](https://amadoios.pages.dev/#/perto-de-mim): o que há por perto e como chegar
+- [Meu roteiro](https://amadoios.pages.dev/#/meu-roteiro): roteiro montado a partir do perfil de viagem
+- [Privacidade e dados](https://amadoios.pages.dev/#/privacidade): o que o app coleta e como recusar
+
+## Circuitos
+
+- [Circuito Cultural do Centro](https://amadoios.pages.dev/#/circuito/circuito-cultural-do-centro): casa de Jorge Amado, catedral e Bar Vesúvio
+- [Circuito Histórico](https://amadoios.pages.dev/#/circuito/circuito-historico): igreja, bar, teatro e catedral que contam a história de Ilhéus
+- [Circuito Religioso](https://amadoios.pages.dev/#/circuito/circuito-religioso): da matriz mais antiga à igreja do aldeamento jesuíta de Olivença
+- [Circuito Gastronômico](https://amadoios.pages.dev/#/circuito/circuito-gastronomico): bares históricos, acarajé de rua e barracas de praia
+- [Circuito Jorge Amado](https://amadoios.pages.dev/#/circuito/circuito-jorge-amado): a casa do escritor e os lugares dos livros dele
+- [Circuito Água Doce](https://amadoios.pages.dev/#/circuito/circuito-agua-doce): Rio Almada e Lagoa Encantada, de barco
+- [Circuito Água Salgada](https://amadoios.pages.dev/#/circuito/circuito-agua-salgada): praias para banho e para o surf
+- [Circuito Cacau e Chocolate](https://amadoios.pages.dev/#/circuito/circuito-cacau-e-chocolate): da Estrada do Chocolate às fábricas de chocolate
+- [Circuito Fazenda de Cacau](https://amadoios.pages.dev/#/circuito/circuito-fazenda-de-cacau): três fazendas para ver o cacau de perto

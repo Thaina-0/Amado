@@ -1,0 +1,379 @@
+@import 'tailwindcss';
+
+/* why: values exported from the Figma file "Amado - Design System"; the variables below switch with the OS color scheme and contrast, the @theme block turns them into utilities */
+:root {
+  color-scheme: light;
+  --color-bg-canvas: #faf7f1;
+  --color-bg-surface: #fffefb;
+  --color-bg-raised: #ffffff;
+  --color-bg-subtle: #f3ecdf;
+  --color-bg-inverse: #331e15;
+  --color-text-primary: #22140e;
+  --color-text-secondary: #5c3a2a;
+  --color-text-muted: #7a4f3a;
+  --color-text-inverse: #fffefb;
+  --color-text-link: #234f63;
+  --color-text-disabled: #be957a;
+  --color-text-on-action: #fffefb;
+  --color-border-subtle: #e8dec9;
+  --color-border-default: #9c6c51;
+  --color-border-strong: #5c3a2a;
+  --color-action-primary: #5c3a2a;
+  --color-action-primary-hover: #46291d;
+  --color-action-primary-pressed: #331e15;
+  --color-action-secondary: #f3ecdf;
+  --color-action-secondary-hover: #e8dec9;
+  --color-action-secondary-pressed: #d6c8a9;
+  --color-action-disabled: #ebddd2;
+  --color-emergency-bg: #b42318;
+  --color-emergency-bg-hover: #912018;
+  --color-emergency-bg-pressed: #6e1812;
+  --color-emergency-on: #ffffff;
+  --color-emergency-subtle-bg: #fdeceb;
+  --color-emergency-subtle-text: #912018;
+  --color-emergency-border: #b42318;
+  --color-success-text: #2f4e2b;
+  --color-success-icon: #46703d;
+  --color-info-bg: #d6e8ef;
+  --color-info-text: #234f63;
+  --color-info-icon: #2d6881;
+  --color-info-border: #86b8cb;
+  --color-warning-bg: #f8e7b5;
+  --color-warning-text: #614106;
+  --color-warning-icon: #8f6209;
+  --color-warning-border: #e4b84d;
+  --color-success-bg: #deead8;
+  --color-success-border: #9fc092;
+  --color-text-muted: #7a4f3a;
+  --color-icon-default: #5c3a2a;
+  --color-focus-ring: #2d6881;
+
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-screen: 20px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 999px;
+
+  --size-control-lg: 56px;
+  --size-control-xl: 72px;
+  --size-touch-min: 48px;
+
+  --border-thin: 1px;
+  --border-default: 2px;
+  --border-focus: 3px;
+
+  --font-family-ui: 'Atkinson Hyperlegible Next Variable', system-ui, sans-serif;
+}
+
+:root[data-theme='dark'],
+:root[data-auto='dark']:not([data-theme]) {
+  color-scheme: dark;
+  --color-bg-canvas: #22140e;
+  --color-bg-surface: #331e15;
+  --color-bg-raised: #46291d;
+  --color-bg-subtle: #46291d;
+  --color-bg-inverse: #faf7f1;
+  --color-text-primary: #fffefb;
+  --color-text-secondary: #e8dec9;
+  --color-text-muted: #d6c8a9;
+  --color-text-inverse: #22140e;
+  --color-text-link: #b2d3df;
+  --color-text-disabled: #7a4f3a;
+  --color-text-on-action: #22140e;
+  --color-border-subtle: #46291d;
+  --color-border-default: #be957a;
+  --color-border-strong: #f3ecdf;
+  --color-action-primary: #f3ecdf;
+  --color-action-primary-hover: #faf7f1;
+  --color-action-primary-pressed: #fffefb;
+  --color-action-secondary: #46291d;
+  --color-action-secondary-hover: #5c3a2a;
+  --color-action-secondary-pressed: #7a4f3a;
+  --color-action-disabled: #46291d;
+  --color-emergency-bg: #d13b2e;
+  --color-emergency-bg-hover: #b42318;
+  --color-emergency-bg-pressed: #912018;
+  --color-emergency-subtle-bg: #6e1812;
+  --color-emergency-subtle-text: #facdc8;
+  --color-emergency-border: #f28b82;
+  --color-success-text: #deead8;
+  --color-success-icon: #9fc092;
+  --color-info-bg: #19394a;
+  --color-info-text: #d6e8ef;
+  --color-info-icon: #86b8cb;
+  --color-info-border: #2d6881;
+  --color-warning-bg: #4d3405;
+  --color-warning-text: #f8e7b5;
+  --color-warning-icon: #e4b84d;
+  --color-warning-border: #8f6209;
+  --color-success-bg: #263e23;
+  --color-success-border: #46703d;
+  --color-text-muted: #d6c8a9;
+  --color-icon-default: #f3ecdf;
+  --color-focus-ring: #86b8cb;
+}
+
+:root[data-theme='contrast'],
+:root[data-auto='contrast']:not([data-theme]) {
+  color-scheme: light;
+  --color-bg-canvas: #ffffff;
+  --color-bg-surface: #ffffff;
+  --color-bg-raised: #ffffff;
+  --color-bg-subtle: #f3ecdf;
+  --color-bg-inverse: #22140e;
+  --color-text-primary: #22140e;
+  --color-text-secondary: #22140e;
+  --color-text-muted: #46291d;
+  --color-text-inverse: #ffffff;
+  --color-text-link: #19394a;
+  --color-text-disabled: #7a4f3a;
+  --color-text-on-action: #ffffff;
+  --color-border-subtle: #9c6c51;
+  --color-border-default: #22140e;
+  --color-border-strong: #22140e;
+  --color-action-primary: #22140e;
+  --color-action-primary-hover: #331e15;
+  --color-action-primary-pressed: #331e15;
+  --color-action-secondary: #ffffff;
+  --color-action-secondary-hover: #f3ecdf;
+  --color-action-secondary-pressed: #e8dec9;
+  --color-action-disabled: #ebddd2;
+  --color-emergency-bg: #912018;
+  --color-emergency-bg-hover: #6e1812;
+  --color-emergency-bg-pressed: #6e1812;
+  --color-emergency-subtle-bg: #fdeceb;
+  --color-emergency-subtle-text: #6e1812;
+  --color-emergency-border: #912018;
+  --color-success-text: #263e23;
+  --color-success-icon: #2f4e2b;
+  --color-info-bg: #edf5f8;
+  --color-info-text: #19394a;
+  --color-info-icon: #234f63;
+  --color-info-border: #234f63;
+  --color-warning-bg: #fcf5e1;
+  --color-warning-text: #4d3405;
+  --color-warning-icon: #614106;
+  --color-warning-border: #614106;
+  --color-success-bg: #f1f6ee;
+  --color-success-border: #2f4e2b;
+  --color-text-muted: #46291d;
+  --color-icon-default: #22140e;
+  --color-focus-ring: #19394a;
+}
+
+@theme inline {
+  --color-*: initial;
+  --color-canvas: var(--color-bg-canvas);
+  --color-surface: var(--color-bg-surface);
+  --color-subtle: var(--color-bg-subtle);
+  --color-ink: var(--color-text-primary);
+  --color-ink-secondary: var(--color-text-secondary);
+  --color-line: var(--color-border-default);
+  --color-action: var(--color-action-primary);
+  --color-action-hover: var(--color-action-primary-hover);
+  --color-action-pressed: var(--color-action-primary-pressed);
+  --color-on-action: var(--color-text-on-action);
+  --color-action-alt: var(--color-action-secondary);
+  --color-action-alt-hover: var(--color-action-secondary-hover);
+  --color-action-alt-pressed: var(--color-action-secondary-pressed);
+  --color-emergency: var(--color-emergency-bg);
+  --color-emergency-hover: var(--color-emergency-bg-hover);
+  --color-emergency-pressed: var(--color-emergency-bg-pressed);
+  --color-on-emergency: var(--color-emergency-on);
+  --color-emergency-soft: var(--color-emergency-subtle-bg);
+  --color-emergency-soft-ink: var(--color-emergency-subtle-text);
+  --color-emergency-line: var(--color-emergency-border);
+  --color-success: var(--color-success-icon);
+  --color-focus: var(--color-focus-ring);
+  --color-link: var(--color-text-link);
+  --color-ink-muted: var(--color-text-muted);
+  --color-line-subtle: var(--color-border-subtle);
+  --color-line-strong: var(--color-border-strong);
+  --color-info-soft: var(--color-info-bg);
+  --color-info-ink: var(--color-info-text);
+  --color-info-mark: var(--color-info-icon);
+  --color-info-line: var(--color-info-border);
+  --color-warn-soft: var(--color-warning-bg);
+  --color-warn-ink: var(--color-warning-text);
+  --color-warn-mark: var(--color-warning-icon);
+  --color-warn-line: var(--color-warning-border);
+  --color-success-soft: var(--color-success-bg);
+  --color-success-line: var(--color-success-border);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --font-sans: var(--font-family-ui);
+
+  --ease-brand: cubic-bezier(0.7, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+
+  --animate-strike-draw: strike-draw 1s var(--ease-brand) both;
+  --animate-screen-in: screen-in 200ms var(--ease-out) backwards;
+  --animate-rise: rise 300ms var(--ease-out) backwards;
+  --animate-pod-in: pod-in 700ms var(--ease-out) backwards;
+
+  @keyframes strike-draw {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes screen-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pod-in {
+    from {
+      opacity: 0;
+      transform: scale(0.6) rotate(-8deg);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) rotate(0);
+    }
+  }
+
+  --animate-glyph-rise: glyph-rise 650ms var(--ease-out) backwards;
+  --animate-glow-bloom: glow-bloom 1400ms var(--ease-out) backwards;
+  --animate-ama-pop: ama-pop 520ms var(--ease-out) backwards;
+
+  @keyframes glyph-rise {
+    from {
+      opacity: 0;
+      transform: translateY(105%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes glow-bloom {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes ama-pop {
+    0% {
+      transform: scale(1);
+    }
+    45% {
+      transform: scale(1.14);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  --text-h1: 28px;
+  --text-h1--line-height: 36px;
+  --text-h1--font-weight: 700;
+  --text-h1--letter-spacing: -0.5px;
+  --text-h3: 20px;
+  --text-h3--line-height: 28px;
+  --text-h3--font-weight: 700;
+  --text-title: 18px;
+  --text-title--line-height: 26px;
+  --text-title--font-weight: 600;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 20px;
+  --text-body-sm--letter-spacing: 0.2px;
+  --text-label: 16px;
+  --text-label--line-height: 20px;
+  --text-label--font-weight: 600;
+  --text-label--letter-spacing: 0.2px;
+  --text-numeric: 32px;
+  --text-numeric--line-height: 36px;
+  --text-numeric--font-weight: 700;
+}
+
+@layer base {
+  body {
+    @apply bg-canvas font-sans text-base text-ink;
+  }
+
+  a,
+  button {
+    touch-action: manipulation;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible {
+    outline: var(--border-focus) solid var(--color-focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+/* why: reduced motion keeps the fades, which help people follow a change, and drops every move and scale */
+@media (prefers-reduced-motion: reduce) {
+  @keyframes screen-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes pod-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  :active {
+    scale: none !important;
+  }
+}

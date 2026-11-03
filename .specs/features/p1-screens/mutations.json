@@ -1,0 +1,26 @@
+[
+  {
+    "file": "src/app/routes.ts",
+    "old": "  if (onboarding === 'pending' && !OPEN_WHILE_PENDING.has(route.name)) return first\n  if (route.name === 'place' && !knowsPlace(route.id)) return { name: 'nearby' }\n",
+    "new": "  if (route.name === 'place' && !knowsPlace(route.id)) return { name: 'nearby' }\n  if (onboarding === 'pending' && !OPEN_WHILE_PENDING.has(route.name)) return first\n",
+    "proof": "pnpm exec vitest run src/app/routes.test.ts -t \"while onboarding is pending\"",
+    "label": "resolveRoute: unknown place id checked before the onboarding guard",
+    "result": "survived"
+  },
+  {
+    "file": "src/features/profile/ProfileScreen.tsx",
+    "old": "value={LANGUAGE_NAME[language]}",
+    "new": "value={LANGUAGE_NAME.pt}",
+    "proof": "pnpm exec vitest run src/features/profile/ProfileScreen.test.tsx -t \"writes the Idioma row with its own name\"",
+    "label": "Perfil Idioma row always shows Português instead of the current language's own name",
+    "result": "survived"
+  },
+  {
+    "file": "src/features/onboarding/ConsentScreen.tsx",
+    "old": "update({ onboarding: 'done', countVisit: granted })",
+    "new": "update({ onboarding: 'done', countVisit: true })",
+    "proof": "pnpm exec vitest run src/features/onboarding/onboarding.test.tsx -t \"Permitir localização\"",
+    "label": "Permitir localização: countVisit always true instead of following the browser answer",
+    "result": "killed"
+  }
+]
